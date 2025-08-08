@@ -1,22 +1,10 @@
 namespace MyProgram
 {
-    public class EmailSender : INotificationSystem
+    public class EmailSender : INotificationObserver
     {
-        public string Type { get; private set; } = "Email";
-
-        public void SendNotificationOrderConfirmed()
+        public void Notify(string message)
         {
-            Console.WriteLine($"{Type}: Order Confirmed");
-        }
-
-        public void SendNotificationOrderReady(IOrderType orderType)
-        {
-            Console.WriteLine($"{Type}: {orderType.GetReadyMessage()}");
-        }
-
-        public void SendNotificationOrderDone(IOrderType orderType)
-        {
-            Console.WriteLine($"{Type}: {orderType.GetDoneMessage()}");
+            Console.WriteLine($"Sending email: {message}");
         }
     }
 }

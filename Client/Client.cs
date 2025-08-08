@@ -12,7 +12,6 @@ namespace MyProgram
         {
             ClientValidator.ValidateClient(name, phoneNumber, email, address);
 
-            Random random = new Random();
             Id = "C" + Guid.NewGuid().ToString("N").Substring(0, 4);
             Name = name;
             PhoneNumber = phoneNumber;

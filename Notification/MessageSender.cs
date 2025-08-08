@@ -1,22 +1,10 @@
 namespace MyProgram
 {
-    public class MessageSender : INotificationSystem
+    public class MessageSender : INotificationObserver
     {
-        public string Type { get; private set; } = "Message";
-
-        public void SendNotificationOrderConfirmed()
+        public void Notify(string message)
         {
-            Console.WriteLine($"{Type}: Order Confirmed");
-        }
-
-        public void SendNotificationOrderReady(IOrderType orderType)
-        {
-            Console.WriteLine($"{Type}: {orderType.GetReadyMessage()}");
-        }
-
-        public void SendNotificationOrderDone(IOrderType orderType)
-        {
-            Console.WriteLine($"{Type}: {orderType.GetDoneMessage()}");
+            Console.WriteLine($"Sending message: {message}");
         }
     }
 }

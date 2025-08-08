@@ -8,17 +8,16 @@ namespace MyProgram
         private Client Client { get; set; }
         private List<IItem> Items { get; set; } = new List<IItem>();
         private IOrderType OrderType { get; set; }
-        private INotificationSystem NotificationType { get; set; }
+        private List<INotificationObserver> NotificationObserver { get; set; } = new List<INotificationObserver>();
         private IPaymentType PaymentType { get; set; }
 
-        public Order(Client client, List<IItem> items, IOrderType orderType, INotificationSystem notificationType, IPaymentType paymentType)
+        public Order(Client client, List<IItem> items, IOrderType orderType, IPaymentType paymentType)
         {
-            Id = Id = "O" + Guid.NewGuid().ToString("N").Substring(0, 4);
-            Client = client ?? throw new InvalidOperationException("Invalid client");
-            Items = items ?? throw new InvalidOperationException("Invalid list of items");
-            OrderType = orderType ?? throw new InvalidOperationException("Invalid order type");
-            NotificationType = notificationType ?? throw new InvalidOperationException("Invalid notification type");
-            PaymentType = paymentType ?? throw new InvalidOperationException("Invalid payment type");
+            Id = "O" + Guid.NewGuid().ToString("N").Substring(0, 4);
+            Client = client ?? throw new InvalidOperationException("Client can't be null");
+            Items = items ?? throw new InvalidOperationException("Items can't be null");
+            OrderType = orderType ?? throw new InvalidOperationException("Type can't be null");
+            PaymentType = paymentType ?? throw new InvalidOperationException("Payment can't be null");
         }
 
         public void ProcessPayment()
@@ -28,24 +27,46 @@ namespace MyProgram
 
         public void AddItems(IItem item)
         {
-            if (item == null) throw new InvalidOperationException("Invalid item");
+            if (item == null) throw new InvalidOperationException("Item can't be null");
 
             Items.Add(item);
         }
 
-        public void SendNotificationOrderConfirmed()
+        public void AddObserver(INotificationObserver observer)
         {
-            NotificationType.SendNotificationOrderConfirmed();
+            if (observer == null) throw new InvalidOperationException("Item can't be null");
+
+            NotificationObserver.Add(observer);
         }
 
-        public void SendNotificationOrderReady()
+        public void RemoveObserver(INotificationObserver observer)
         {
-            NotificationType.SendNotificationOrderReady(OrderType);
+            if (observer == null) throw new InvalidOperationException("Observer can't be null");
+
+            NotificationObserver.Remove(observer);
         }
 
-        public void SendNotificationOrderDone()
+        private void NotifyObservers(string message)
         {
-            NotificationType.SendNotificationOrderDone(OrderType);
+            foreach (INotificationObserver observer in NotificationObserver)
+            {
+                observer.Notify(message);
+            }
+        }
+
+        public void ConfirmOrder()
+        {
+            NotifyObservers(OrderType.GetConfirmedMessage());
+        }
+
+        public void OrderReady()
+        {
+            NotifyObservers(OrderType.GetReadyMessage());
+        }
+
+        public void OrderDone()
+        {
+            NotifyObservers(OrderType.GetDoneMessage());
         }
 
     }
