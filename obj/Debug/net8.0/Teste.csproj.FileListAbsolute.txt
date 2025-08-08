@@ -12,3 +12,4 @@ C:\Users\gustavo.marcial\projetos\OOP SOLID\obj\Debug\net8.0\refint\Teste.dll
 C:\Users\gustavo.marcial\projetos\OOP SOLID\obj\Debug\net8.0\Teste.pdb
 C:\Users\gustavo.marcial\projetos\OOP SOLID\obj\Debug\net8.0\Teste.genruntimeconfig.cache
 C:\Users\gustavo.marcial\projetos\OOP SOLID\obj\Debug\net8.0\ref\Teste.dll
+C:\Users\gustavo.marcial\projetos\OOP SOLID\obj\Debug\net8.0\Teste.sourcelink.json
