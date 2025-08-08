@@ -4,12 +4,12 @@ namespace MyProgram
 {
     public class Order
     {
-        public string Id { get; private set; }
-        public Client Client { get; private set; }
-        public List<IItem> Items { get; private set; } = new List<IItem>();
-        public IOrderType OrderType { get; private set; }
-        public INotificationSystem NotificationType { get; private set; }
-        public IPaymentType PaymentType { get; private set; }
+        private string Id { get; set; }
+        private Client Client { get; set; }
+        private List<IItem> Items { get; set; } = new List<IItem>();
+        private IOrderType OrderType { get; set; }
+        private INotificationSystem NotificationType { get; set; }
+        private IPaymentType PaymentType { get; set; }
 
         public Order(Client client, List<IItem> items, IOrderType orderType, INotificationSystem notificationType, IPaymentType paymentType)
         {
@@ -19,6 +19,33 @@ namespace MyProgram
             OrderType = orderType ?? throw new InvalidOperationException("Invalid order type");
             NotificationType = notificationType ?? throw new InvalidOperationException("Invalid notification type");
             PaymentType = paymentType ?? throw new InvalidOperationException("Invalid payment type");
+        }
+
+        public void ProcessPayment()
+        {
+            PaymentType.ProcessPayment();
+        }
+
+        public void AddItems(IItem item)
+        {
+            if (item == null) throw new InvalidOperationException("Invalid item");
+
+            Items.Add(item);
+        }
+
+        public void SendNotificationOrderConfirmed()
+        {
+            NotificationType.SendNotificationOrderConfirmed();
+        }
+
+        public void SendNotificationOrderReady()
+        {
+            NotificationType.SendNotificationOrderReady(OrderType);
+        }
+
+        public void SendNotificationOrderDone()
+        {
+            NotificationType.SendNotificationOrderDone(OrderType);
         }
 
     }

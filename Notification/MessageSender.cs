@@ -4,14 +4,33 @@ namespace MyProgram
     {
         public string Type { get; private set; } = "Message";
 
-        public void SendNotificationConfirmed()
+        public void SendNotificationOrderConfirmed()
         {
-            Console.WriteLine("Order is Confirmed");
+            Console.WriteLine($"{Type}: Order Confirmed");
         }
 
-        public void SendNotificationReady()
+        public void SendNotificationOrderReady(IOrderType orderType)
         {
-            Console.WriteLine("Order is ready");
+            if (orderType is Delivery)
+            {
+                Console.WriteLine($"{Type}: Order on the way");
+            }
+            else
+            {
+                Console.WriteLine($"{Type}: Order ready to pickup");
+            }
+        }
+
+        public void SendNotificationOrderDone(IOrderType orderType)
+        {
+            if (orderType is Delivery)
+            {
+                Console.WriteLine($"{Type}: Order delivered");
+            }
+            else
+            {
+                Console.WriteLine($"{Type}: Order picked up");
+            }
         }
     }
 }

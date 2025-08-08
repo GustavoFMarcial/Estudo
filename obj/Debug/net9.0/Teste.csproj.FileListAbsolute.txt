@@ -12,3 +12,4 @@ C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Deb
 C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net9.0\Teste.pdb
 C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net9.0\Teste.genruntimeconfig.cache
 C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net9.0\ref\Teste.dll
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net9.0\Teste.sourcelink.json

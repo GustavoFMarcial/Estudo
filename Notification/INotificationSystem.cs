@@ -4,7 +4,8 @@ namespace MyProgram
     {
         public string Type { get; }
 
-        public void SendNotificationConfirmed();
-        public void SendNotificationReady();
+        public void SendNotificationOrderConfirmed();
+        public void SendNotificationOrderReady(IOrderType orderType);
+        public void SendNotificationOrderDone(IOrderType orderType);
     }
 }
