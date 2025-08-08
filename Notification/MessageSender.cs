@@ -11,26 +11,12 @@ namespace MyProgram
 
         public void SendNotificationOrderReady(IOrderType orderType)
         {
-            if (orderType is Delivery)
-            {
-                Console.WriteLine($"{Type}: Order on the way");
-            }
-            else
-            {
-                Console.WriteLine($"{Type}: Order ready to pickup");
-            }
+            Console.WriteLine($"{Type}: {orderType.GetReadyMessage()}");
         }
 
         public void SendNotificationOrderDone(IOrderType orderType)
         {
-            if (orderType is Delivery)
-            {
-                Console.WriteLine($"{Type}: Order delivered");
-            }
-            else
-            {
-                Console.WriteLine($"{Type}: Order picked up");
-            }
+            Console.WriteLine($"{Type}: {orderType.GetDoneMessage()}");
         }
     }
 }
