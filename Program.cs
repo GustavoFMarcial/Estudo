@@ -6,10 +6,11 @@
         {
             Client gustavo = new Client("Gustavo", "999999999", "gustavo@gmail.com", "R. dos Catapimbas, bairro Joba, 123 - Cuiabá/MT");
             List<IItem> items = [new Fries(), new Hamburger(), new Soda(), new Cookie()];
-            IOrderType pickup = new Pickup();
+            IOrderType delivery = new Delivery();
+            NotificationSystem notificationSystem = new NotificationSystem();
             IPaymentType pix = new Pix();
 
-            Order o1 = new Order(gustavo, items, pickup, pix);
+            Order o1 = new Order(gustavo, items, delivery, notificationSystem, pix);
 
             o1.AddItems(new Fries());
             o1.ProcessPayment();

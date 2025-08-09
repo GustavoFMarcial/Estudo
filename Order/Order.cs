@@ -1,22 +1,24 @@
+using System.Dynamic;
 using System.Transactions;
 
 namespace MyProgram
 {
     public class Order
     {
-        private string Id { get; set; }
-        private Client Client { get; set; }
+        public string Id { get; set; }
+        public Client Client { get; set; }
         private List<IItem> Items { get; set; } = new List<IItem>();
         private IOrderType OrderType { get; set; }
-        private NotificationSystem Observer = new NotificationSystem();
+        private NotificationSystem NotificationSystem { get; set; }
         private IPaymentType PaymentType { get; set; }
 
-        public Order(Client client, List<IItem> items, IOrderType orderType, IPaymentType paymentType)
+        public Order(Client client, List<IItem> items, IOrderType orderType, NotificationSystem notificationSystem, IPaymentType paymentType)
         {
             Id = "O" + Guid.NewGuid().ToString("N").Substring(0, 4);
             Client = client ?? throw new InvalidOperationException("Client can't be null");
             Items = items ?? throw new InvalidOperationException("Items can't be null");
             OrderType = orderType ?? throw new InvalidOperationException("Type can't be null");
+            NotificationSystem = notificationSystem ?? throw new InvalidOperationException("Notification system can't be null");
             PaymentType = paymentType ?? throw new InvalidOperationException("Payment can't be null");
         }
 
@@ -34,27 +36,27 @@ namespace MyProgram
 
         public void AddObserver(INotificationObserver observer)
         {
-            Observer.AddObserver(observer);
+            NotificationSystem.AddObserver(observer);
         }
 
         public void RemoveObserver(INotificationObserver observer)
         {
-            Observer.RemoveObserver(observer);
+            NotificationSystem.RemoveObserver(observer);
         }
 
         public void ConfirmOrder()
         {
-            Observer.NotifyObservers(OrderType.GetConfirmedMessage());
+            NotificationSystem.NotifyObservers(OrderType.GetMessage(OrderStatus.Confirmed));
         }
 
         public void OrderReady()
         {
-            Observer.NotifyObservers(OrderType.GetReadyMessage());
+            NotificationSystem.NotifyObservers(OrderType.GetMessage(OrderStatus.Ready));
         }
 
         public void OrderDone()
         {
-            Observer.NotifyObservers(OrderType.GetDoneMessage());
+            NotificationSystem.NotifyObservers(OrderType.GetMessage(OrderStatus.Done));
         }
 
     }
