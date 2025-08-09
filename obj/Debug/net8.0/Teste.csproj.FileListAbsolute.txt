@@ -13,3 +13,18 @@ C:\Users\gustavo.marcial\projetos\OOP SOLID\obj\Debug\net8.0\Teste.pdb
 C:\Users\gustavo.marcial\projetos\OOP SOLID\obj\Debug\net8.0\Teste.genruntimeconfig.cache
 C:\Users\gustavo.marcial\projetos\OOP SOLID\obj\Debug\net8.0\ref\Teste.dll
 C:\Users\gustavo.marcial\projetos\OOP SOLID\obj\Debug\net8.0\Teste.sourcelink.json
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\bin\Debug\net8.0\Teste.exe
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\bin\Debug\net8.0\Teste.deps.json
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\bin\Debug\net8.0\Teste.runtimeconfig.json
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\bin\Debug\net8.0\Teste.dll
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\bin\Debug\net8.0\Teste.pdb
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\Teste.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\Teste.AssemblyInfoInputs.cache
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\Teste.AssemblyInfo.cs
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\Teste.csproj.CoreCompileInputs.cache
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\Teste.sourcelink.json
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\Teste.dll
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\refint\Teste.dll
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\Teste.pdb
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\Teste.genruntimeconfig.cache
+C:\Users\Gustavo F. Marcial\Desktop\coisas\Dev. Course\C#\projects\Teste\obj\Debug\net8.0\ref\Teste.dll

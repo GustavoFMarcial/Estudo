@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gustavo.marcial\\projetos\\OOP SOLID\\Teste.csproj": {}
+    "C:\\Users\\Gustavo F. Marcial\\Desktop\\coisas\\Dev. Course\\C#\\projects\\Teste\\Teste.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gustavo.marcial\\projetos\\OOP SOLID\\Teste.csproj": {
+    "C:\\Users\\Gustavo F. Marcial\\Desktop\\coisas\\Dev. Course\\C#\\projects\\Teste\\Teste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gustavo.marcial\\projetos\\OOP SOLID\\Teste.csproj",
+        "projectUniqueName": "C:\\Users\\Gustavo F. Marcial\\Desktop\\coisas\\Dev. Course\\C#\\projects\\Teste\\Teste.csproj",
         "projectName": "Teste",
-        "projectPath": "C:\\Users\\gustavo.marcial\\projetos\\OOP SOLID\\Teste.csproj",
-        "packagesPath": "C:\\Users\\gustavo.marcial\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gustavo.marcial\\projetos\\OOP SOLID\\obj\\",
+        "projectPath": "C:\\Users\\Gustavo F. Marcial\\Desktop\\coisas\\Dev. Course\\C#\\projects\\Teste\\Teste.csproj",
+        "packagesPath": "C:\\Users\\Gustavo F. Marcial\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gustavo F. Marcial\\Desktop\\coisas\\Dev. Course\\C#\\projects\\Teste\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\gustavo.marcial\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Gustavo F. Marcial\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -58,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\gustavo.marcial\\dotnet8\\sdk\\8.0.412/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

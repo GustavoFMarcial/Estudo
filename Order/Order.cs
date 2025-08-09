@@ -8,7 +8,7 @@ namespace MyProgram
         private Client Client { get; set; }
         private List<IItem> Items { get; set; } = new List<IItem>();
         private IOrderType OrderType { get; set; }
-        private List<INotificationObserver> NotificationObserver { get; set; } = new List<INotificationObserver>();
+        private NotificationSystem Observer = new NotificationSystem();
         private IPaymentType PaymentType { get; set; }
 
         public Order(Client client, List<IItem> items, IOrderType orderType, IPaymentType paymentType)
@@ -34,39 +34,27 @@ namespace MyProgram
 
         public void AddObserver(INotificationObserver observer)
         {
-            if (observer == null) throw new InvalidOperationException("Item can't be null");
-
-            NotificationObserver.Add(observer);
+            Observer.AddObserver(observer);
         }
 
         public void RemoveObserver(INotificationObserver observer)
         {
-            if (observer == null) throw new InvalidOperationException("Observer can't be null");
-
-            NotificationObserver.Remove(observer);
-        }
-
-        private void NotifyObservers(string message)
-        {
-            foreach (INotificationObserver observer in NotificationObserver)
-            {
-                observer.Notify(message);
-            }
+            Observer.RemoveObserver(observer);
         }
 
         public void ConfirmOrder()
         {
-            NotifyObservers(OrderType.GetConfirmedMessage());
+            Observer.NotifyObservers(OrderType.GetConfirmedMessage());
         }
 
         public void OrderReady()
         {
-            NotifyObservers(OrderType.GetReadyMessage());
+            Observer.NotifyObservers(OrderType.GetReadyMessage());
         }
 
         public void OrderDone()
         {
-            NotifyObservers(OrderType.GetDoneMessage());
+            Observer.NotifyObservers(OrderType.GetDoneMessage());
         }
 
     }
